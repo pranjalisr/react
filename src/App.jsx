@@ -19,17 +19,17 @@ function App() {
 // mounting, re-rendering, unmounting
 function Counter() {
   const [count, setCount] = useState(0);
-  console.log("counter");
 
   // clearInterval
   useEffect(function () {
-    console.log("hi there");
+    console.log("mount");
     let clock = setInterval(function() {
       console.log("from inside interval");
        setCount(c => c + 1);
     }, 1000);
 
     return function() {
+      console.log("on unmount");
       clearInterval(clock)
     }
 
